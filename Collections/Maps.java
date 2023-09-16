@@ -29,7 +29,7 @@ public class Maps
          ha.put(2,"Bhasa");
          // use duplicate values hashMap override then remove  ha.put(2,"Bhasas");
           
-         // To use entrySet() Set of all values
+         // To use entrySet() Set of all keys&values
          Set<Map.Entry<Integer,String>> es = ha.entrySet();
          //use Iterator to print separatly
          Iterator<Map.Entry<Integer,String>> i =es.iterator();
@@ -38,7 +38,25 @@ public class Maps
             System.out.println(i.next());
          }
          
-         //use LinkedHashMap used for if we want insertion order to used it
+
+
+         // if may we want to change values(names)
+         Iterator<Map.Entry<Integer,String>> newSet =es.iterator();
+         while(newSet.hasNext())
+         {
+            //To change that entries as Entry Object then we can split the key and value then change the values (use typeCasting)
+            Map.Entry<Integer,String> uniqValues = (Map.Entry<Integer,String>)newSet.next(); //typeCasting into EntryObject and got each entry as seprately type of objects
+            
+            if(uniqValues.getKey().equals(50))
+                uniqValues.setValue("Phoenix");
+
+         }
+            System.out.println(ha);
+
+
+
+
+         // //use LinkedHashMap used for if we want insertion order to used it
          LinkedHashMap<Integer,String> lh = new LinkedHashMap<>();
 
          lh.put(12,"ArunKumar");
