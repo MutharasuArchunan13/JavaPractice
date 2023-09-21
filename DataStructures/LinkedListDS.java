@@ -37,5 +37,7 @@ public class LinkedListDS
         linkedList.pop();//remove first element also use -> poll()
         linkedList.add(3, 99);// add element base on index
       System.out.println(linkedList);
+
+     
     }
 }
